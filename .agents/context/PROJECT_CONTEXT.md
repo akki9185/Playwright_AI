@@ -4,6 +4,8 @@
 CheckWells is an enterprise ERP/CRM-style property management, inspection, and operations platform.
 - **Architectural Paradigm**: Interconnected business platform with multi-role access control, state machine workflows, cross-module dependencies, and backend automation.
 - **QA Focus**: Evaluate features through end-to-end business operations, data propagation, role-based security, state transitions, and system integration.
+- **Staging / Dev Environment URL**: `https://checkwells.iihdev.com`
+- **SuperAdmin Account**: `chris.cole@checkwells.com` / `Cos@123`
 
 ---
 
