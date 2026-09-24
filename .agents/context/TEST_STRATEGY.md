@@ -66,6 +66,13 @@ To ensure zero missing test cases, every feature/module audit must evaluate all 
 - [ ] **Toast Notifications**: Green success / Red error toast feedback on operations.
 - [ ] **Network / Backend Failure**: UI handles API timeout or 500 error gracefully without breaking layout.
 
+### 3.9 Adversarial QA & Flaw Identification (Beyond Code Mirroring)
+- [ ] **No Pure Code Mirroring**: Never design tests solely around what existing code handles successfully.
+- [ ] **Race Conditions**: Rapid double-clicking submit/save buttons to test double-creation prevention.
+- [ ] **Destructive & Security Inputs**: Injected scripts (`<script>alert(1)</script>`), SQL keywords, non-standard Unicode/emoji strings.
+- [ ] **Unsaved State Leaks**: Mid-form category or tab switching to verify clean state reset without leaking previous category data.
+- [ ] **Backend Enforcement**: Client-side validation bypass attempts (submitting raw API payloads with missing mandatory fields or invalid ranges).
+
 ---
 
 ## 4. REQUIREMENT & TEST TRACEABILITY MODEL
