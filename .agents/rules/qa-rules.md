@@ -2,6 +2,10 @@
 trigger: always_on
 ---
 
+---
+trigger: always_on
+---
+
 # SENIOR QA METHODOLOGY & EXECUTION RULES
 
 ## 1. SENIOR QA ROLE & MINDSET
@@ -46,21 +50,25 @@ Refer to [TEST_STRATEGY.md](file:///var/www/html/Playwright_AI/CheckWells_Automa
 
 ---
 
-## 4. TEST COVERAGE DIMENSIONS
-Design complete test coverage across these core areas:
-- **Functional & Alternate**: Happy paths, alternate flows, negative paths, missing inputs, duplicate inputs.
-- **Boundary & Validation**: Minimum/maximum lengths, character sets, boundary values, invalid combinations.
-- **Role & Permission**: Authorized vs unauthorized access, direct URL access, action-level and data-level access control.
-- **State Machine**: Valid and invalid status transitions (e.g., Draft → Pending → Assigned → Completed).
-- **Integration & Regression**: Side-effects on dependent modules, search filters, listings, and reports.
+## 4. SYSTEM-WIDE TEST COVERAGE DIMENSIONS (MISSING-CASE PREVENTION)
+Every module audit and test creation task MUST explicitly evaluate all 8 coverage dimensions defined in [TEST_STRATEGY.md](file:///var/www/html/Playwright_AI/CheckWells_Automation_Analysis/.agents/context/TEST_STRATEGY.md) Section 3:
+
+1. **Field-Level & Input Validation**: Mandatory vs optional, min/max character boundaries, invalid formats, special chars/XSS, whitespace trimming.
+2. **Dynamic Dropdowns & Selectors**: Data source verification (Global Settings, master tables), initial default selections, dependent dropdown filters, empty source states.
+3. **Modals, Drawers & Child Entities**: Open/close lifecycle, form reset on reopen, child accordions (Notes, Preferences, Dynamic Sub-tabs), duplicate child prevention.
+4. **Data Persistence & Table Verification (Post-Save/Update)**: Grid listing instant reflection, inline table update without full refresh, detail view re-fetch accuracy, audit timestamps.
+5. **Inheritance & Default Configuration Logic**: Global setting auto-population, entity-level override without mutating global settings, category/type switch re-population.
+6. **Common vs Type-Specific Preferences**: Universal preference accordions (Invoicing, Commission) vs service/entity type-specific sub-accordions, toggle switch enablers.
+7. **Role & Authorization Controls**: Role-based button visibility, field-level read-only states, endpoint URL protection.
+8. **Resilience & State Recovery**: Inline red border/error messages, toast notifications (success/error), graceful handling of API timeouts/500 errors.
 
 ---
 
 ## 5. MANDATORY JIRA TEST CASE FORMAT
 When generating test cases, output MUST strictly use this exact markdown table structure:
 
-| Test case ID | Module name | Test scenario | Test Case Desciption | Pre Conditions | Steps to Execute | Test data | Expected Result | Actual Result |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Test case ID | Module name | Accordion Section | Test scenario | Test Case Desciption | Pre Conditions | Steps to Execute | Test data | Expected Result | Actual Result |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 
 ### Execution Rules for Test Cases:
 - **Test Scenario**: Short and concise (preferably 2–3 words, e.g., "Valid Property Creation", "Unauthorized Role Access").
@@ -111,6 +119,13 @@ Before completing any QA analysis, test generation, test automation, or framewor
 [ ] Requirements separated from assumptions
 [ ] Correct repository/source used (`checkwells-ops-hub` / `cos-backend`)
 [ ] Correct frontend/backend context used
+[ ] All 8 system-wide coverage dimensions evaluated ([TEST_STRATEGY.md](file:///var/www/html/Playwright_AI/CheckWells_Automation_Analysis/.agents/context/TEST_STRATEGY.md) Sec 3)
+[ ] Field-level boundary & input validations included
+[ ] Dynamic dropdown & master data sources evaluated
+[ ] Modal lifecycle & child entity state resets checked
+[ ] Post-save & post-update table persistence verified
+[ ] Global setting default inheritance & override logic tested
+[ ] Common vs type-specific preference accordions separated
 [ ] Relevant role/permission coverage considered
 [ ] Security considered where applicable
 [ ] Data integrity considered where applicable
