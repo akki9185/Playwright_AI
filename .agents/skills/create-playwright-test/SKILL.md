@@ -1,3 +1,8 @@
+---
+name: create-playwright-test
+description: Procedure for generating Playwright test automation scripts and Page Object classes following locator and codebase standards.
+---
+
 # SKILL: CREATE PLAYWRIGHT TEST
 
 ## 1. PURPOSE

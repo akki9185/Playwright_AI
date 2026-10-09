@@ -1,3 +1,8 @@
+---
+name: locator-analysis
+description: Procedure for analyzing DOM structures and extracting resilient Playwright locators.
+---
+
 # SKILL: LOCATOR ANALYSIS
 
 ## 1. PURPOSE

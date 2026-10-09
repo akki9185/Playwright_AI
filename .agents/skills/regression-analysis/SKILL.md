@@ -1,3 +1,8 @@
+---
+name: regression-analysis
+description: Procedure for assessing system-wide change impact, identifying regression areas, and selecting appropriate regression test execution scope.
+---
+
 # SKILL: REGRESSION ANALYSIS & IMPACT ASSESSMENT
 
 ## 1. PURPOSE

@@ -1,0 +1,4 @@
+# Ignore intermediate files
+*
+!.gitignore
+!README.md

@@ -1,0 +1,15 @@
+{
+  "name": "checkwells-automation",
+  "version": "1.0.0",
+  "description": "Playwright AI Test Automation Suite for CheckWells Ops Hub",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:clients": "playwright test tests/clients/",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report reports"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0"
+  }
+}
