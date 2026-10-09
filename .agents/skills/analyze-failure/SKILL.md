@@ -1,3 +1,8 @@
+---
+name: analyze-failure
+description: Procedure for analyzing test execution failures, classifying defects, and gathering proportional reproduction evidence.
+---
+
 # SKILL: ANALYZE FAILURE & EVIDENCE STANDARDS
 
 ## 1. PURPOSE

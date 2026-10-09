@@ -1,3 +1,8 @@
+---
+name: generate-test-case
+description: Procedure for generating production-ready manual test cases with complete UI self-observation and system-wide coverage validation.
+---
+
 # SKILL: GENERATE TEST CASE
 
 ## 1. PURPOSE
